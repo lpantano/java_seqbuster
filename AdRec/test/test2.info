@@ -1,0 +1,62 @@
+Number of sequences read: 3
+Number of sequences with adapter removal at positions 0 to 14: 1
+Number of sequences with adapter removal at positions 15 to lenseq - 5: 2
+These sequences are in the file: test/test2.ad
+Number of sequences longer than 40 and with adapter 0
+These sequences are in the file: test/test2.longer
+Number of sequences without adapter 0
+These sequences are in the file: test/test2.noad
+Number of sequences with high complexity (AAAAAA) 0
+These sequences are in the file: test/test2.complex
+Distribution of the adapter position in sequences:
+
+Position: 1 number of sequence: 0
+Position: 2 number of sequence: 0
+Position: 3 number of sequence: 0
+Position: 4 number of sequence: 0
+Position: 5 number of sequence: 0
+Position: 6 number of sequence: 0
+Position: 7 number of sequence: 0
+Position: 8 number of sequence: 1
+Position: 9 number of sequence: 0
+Position: 10 number of sequence: 0
+Position: 11 number of sequence: 0
+Position: 12 number of sequence: 0
+Position: 13 number of sequence: 0
+Position: 14 number of sequence: 0
+Position: 15 number of sequence: 0
+Position: 16 number of sequence: 0
+Position: 17 number of sequence: 0
+Position: 18 number of sequence: 0
+Position: 19 number of sequence: 0
+Position: 20 number of sequence: 1
+Position: 21 number of sequence: 0
+Position: 22 number of sequence: 0
+Position: 23 number of sequence: 0
+Position: 24 number of sequence: 1
+Position: 25 number of sequence: 0
+Position: 26 number of sequence: 0
+Position: 27 number of sequence: 0
+Position: 28 number of sequence: 0
+Position: 29 number of sequence: 0
+Position: 30 number of sequence: 0
+Position: 31 number of sequence: 0
+Position: 32 number of sequence: 0
+Position: 33 number of sequence: 0
+Position: 34 number of sequence: 0
+Position: 35 number of sequence: 0
+Position: 36 number of sequence: 0
+Position: 37 number of sequence: 0
+Position: 38 number of sequence: 0
+Position: 39 number of sequence: 0
+Position: 40 number of sequence: 0
+Position: 41 number of sequence: 0
+Position: 42 number of sequence: 0
+Position: 43 number of sequence: 0
+Position: 44 number of sequence: 0
+Position: 45 number of sequence: 0
+Position: 46 number of sequence: 0
+Position: 47 number of sequence: 0
+Position: 48 number of sequence: 0
+Position: 49 number of sequence: 0
+Position: 50 number of sequence: 0

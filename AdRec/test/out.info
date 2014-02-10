@@ -1,0 +1,111 @@
+Number of sequences read: 12500
+Number of sequences with adapter removal at positions 0 to 15: 0
+Number of sequences with adapter removal at positions 15 to lenseq - 8: 0
+These sequences are in the file: test/out.ad
+Number of sequences longer than 40 and with adapter 0
+These sequences are in the file: test/out.longer
+Number of sequences without adapter 12500
+These sequences are in the file: test/out.noad
+Number of sequences with high complexity (AAAAAA) 0
+These sequences are in the file: test/out.complex
+Distribution of the adapter position in sequences:
+
+Position: 1 number of sequence: 0
+Position: 2 number of sequence: 0
+Position: 3 number of sequence: 0
+Position: 4 number of sequence: 0
+Position: 5 number of sequence: 0
+Position: 6 number of sequence: 0
+Position: 7 number of sequence: 0
+Position: 8 number of sequence: 0
+Position: 9 number of sequence: 0
+Position: 10 number of sequence: 0
+Position: 11 number of sequence: 0
+Position: 12 number of sequence: 0
+Position: 13 number of sequence: 0
+Position: 14 number of sequence: 0
+Position: 15 number of sequence: 0
+Position: 16 number of sequence: 0
+Position: 17 number of sequence: 0
+Position: 18 number of sequence: 0
+Position: 19 number of sequence: 0
+Position: 20 number of sequence: 0
+Position: 21 number of sequence: 0
+Position: 22 number of sequence: 0
+Position: 23 number of sequence: 0
+Position: 24 number of sequence: 0
+Position: 25 number of sequence: 0
+Position: 26 number of sequence: 0
+Position: 27 number of sequence: 0
+Position: 28 number of sequence: 0
+Position: 29 number of sequence: 0
+Position: 30 number of sequence: 0
+Position: 31 number of sequence: 0
+Position: 32 number of sequence: 0
+Position: 33 number of sequence: 0
+Position: 34 number of sequence: 0
+Position: 35 number of sequence: 0
+Position: 36 number of sequence: 0
+Position: 37 number of sequence: 0
+Position: 38 number of sequence: 0
+Position: 39 number of sequence: 0
+Position: 40 number of sequence: 0
+Position: 41 number of sequence: 0
+Position: 42 number of sequence: 0
+Position: 43 number of sequence: 0
+Position: 44 number of sequence: 0
+Position: 45 number of sequence: 0
+Position: 46 number of sequence: 0
+Position: 47 number of sequence: 0
+Position: 48 number of sequence: 0
+Position: 49 number of sequence: 0
+Position: 50 number of sequence: 0
+Position: 51 number of sequence: 0
+Position: 52 number of sequence: 0
+Position: 53 number of sequence: 0
+Position: 54 number of sequence: 0
+Position: 55 number of sequence: 0
+Position: 56 number of sequence: 0
+Position: 57 number of sequence: 0
+Position: 58 number of sequence: 0
+Position: 59 number of sequence: 0
+Position: 60 number of sequence: 0
+Position: 61 number of sequence: 0
+Position: 62 number of sequence: 0
+Position: 63 number of sequence: 0
+Position: 64 number of sequence: 0
+Position: 65 number of sequence: 0
+Position: 66 number of sequence: 0
+Position: 67 number of sequence: 0
+Position: 68 number of sequence: 0
+Position: 69 number of sequence: 0
+Position: 70 number of sequence: 0
+Position: 71 number of sequence: 0
+Position: 72 number of sequence: 0
+Position: 73 number of sequence: 0
+Position: 74 number of sequence: 0
+Position: 75 number of sequence: 0
+Position: 76 number of sequence: 0
+Position: 77 number of sequence: 0
+Position: 78 number of sequence: 0
+Position: 79 number of sequence: 0
+Position: 80 number of sequence: 0
+Position: 81 number of sequence: 0
+Position: 82 number of sequence: 0
+Position: 83 number of sequence: 0
+Position: 84 number of sequence: 0
+Position: 85 number of sequence: 0
+Position: 86 number of sequence: 0
+Position: 87 number of sequence: 0
+Position: 88 number of sequence: 0
+Position: 89 number of sequence: 0
+Position: 90 number of sequence: 0
+Position: 91 number of sequence: 0
+Position: 92 number of sequence: 0
+Position: 93 number of sequence: 0
+Position: 94 number of sequence: 0
+Position: 95 number of sequence: 0
+Position: 96 number of sequence: 0
+Position: 97 number of sequence: 0
+Position: 98 number of sequence: 0
+Position: 99 number of sequence: 0

@@ -1,0 +1,3 @@
+seq	name	mir	start	end	mism	add	t5	t3	s5	s3	DB	ambiguity
+GTGAGGTAGTAGGTTGTATAGT	hsa-let-7a-5p	hsa-let-7a-2_3:25_mut_0:G	3	24	0	0	u-G	u-T	GAG	AGTTTGGG	miRNA
+GTGAGGTAGTAGGTTGTATAGT	hsa-let-7a-2_3:25_mut_0:G	hsa-let-7a-5p	3	24	0	0	u-G	u-T	GAG	AGTTTGGG	miRNA	1

@@ -1,0 +1,945 @@
+/*
+ * SeqBuster20AboutBox.java
+ */
+
+package seqbuster20;
+
+import com.mysql.jdbc.Connection;
+import com.mysql.jdbc.Statement;
+import java.awt.Frame;
+import java.io.BufferedReader;
+//import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+//import java.io.PrintWriter;
+import java.io.Reader;
+import java.net.URL;
+import java.net.URLConnection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+//import org.jdesktop.application.Action;
+
+import javax.swing.JFileChooser;
+//import javax.swing.JFrame;
+import javax.swing.JOptionPane;
+import seqbuster20.AdaptorRecognition.*;
+
+public class firstrunFrame extends javax.swing.JDialog {
+
+    
+    public firstrunFrame( ) throws IOException {
+//        super(parent);
+        
+        initComponents();
+        Frame tut_obj=new InstallHelp();
+        tut_obj.setLocationRelativeTo(this);
+        tut_obj.setVisible(true);
+//        getRootPane().setDefaultButton(CloseButAdapFrame);
+    }
+
+
+    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
+    private void initComponents() {
+
+        CreSQBut = new javax.swing.JButton();
+        CloseButAdapFrame = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        GetMirBut = new javax.swing.JButton();
+        CheMysBut = new javax.swing.JButton();
+        jLabel4 = new javax.swing.JLabel();
+        UseMysText = new javax.swing.JTextField();
+        jLabel5 = new javax.swing.JLabel();
+        PswMysText = new javax.swing.JPasswordField();
+        jLabel6 = new javax.swing.JLabel();
+        HosMysText = new javax.swing.JTextField();
+        pathblast = new javax.swing.JTextField();
+        jLabel7 = new javax.swing.JLabel();
+        jButton3 = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
+        jLabel8 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
+        jSeparator1 = new javax.swing.JSeparator();
+        jSeparator2 = new javax.swing.JSeparator();
+
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setModal(true);
+        setName("aboutBox"); // NOI18N
+        setResizable(false);
+
+        org.jdesktop.application.ResourceMap resourceMap = org.jdesktop.application.Application.getInstance(seqbuster20.SeqBuster20App.class).getContext().getResourceMap(firstrunFrame.class);
+        CreSQBut.setText(resourceMap.getString("CreSQBut.text")); // NOI18N
+        CreSQBut.setName("CreSQBut"); // NOI18N
+        CreSQBut.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CreSQButActionPerformed(evt);
+            }
+        });
+
+        CloseButAdapFrame.setBackground(resourceMap.getColor("CloseButAdapFrame.background")); // NOI18N
+        CloseButAdapFrame.setText(resourceMap.getString("CloseButAdapFrame.text")); // NOI18N
+        CloseButAdapFrame.setName("CloseButAdapFrame"); // NOI18N
+        CloseButAdapFrame.setOpaque(true);
+        CloseButAdapFrame.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CloseButAdapFrameActionPerformed(evt);
+            }
+        });
+
+        jLabel1.setText(resourceMap.getString("jLabel1.text")); // NOI18N
+        jLabel1.setName("jLabel1"); // NOI18N
+
+        jLabel2.setText(resourceMap.getString("jLabel2.text")); // NOI18N
+        jLabel2.setName("jLabel2"); // NOI18N
+
+        jLabel3.setText(resourceMap.getString("jLabel3.text")); // NOI18N
+        jLabel3.setName("jLabel3"); // NOI18N
+
+        GetMirBut.setText(resourceMap.getString("GetMirBut.text")); // NOI18N
+        GetMirBut.setName("GetMirBut"); // NOI18N
+        GetMirBut.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                GetMirButActionPerformed(evt);
+            }
+        });
+
+        CheMysBut.setText(resourceMap.getString("CheMysBut.text")); // NOI18N
+        CheMysBut.setName("CheMysBut"); // NOI18N
+        CheMysBut.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CheMysButActionPerformed(evt);
+            }
+        });
+
+        jLabel4.setText(resourceMap.getString("jLabel4.text")); // NOI18N
+        jLabel4.setName("jLabel4"); // NOI18N
+
+        UseMysText.setText(resourceMap.getString("UseMysText.text")); // NOI18N
+        UseMysText.setName("UseMysText"); // NOI18N
+
+        jLabel5.setText(resourceMap.getString("jLabel5.text")); // NOI18N
+        jLabel5.setName("jLabel5"); // NOI18N
+
+        PswMysText.setText(resourceMap.getString("PswMysText.text")); // NOI18N
+        PswMysText.setName("PswMysText"); // NOI18N
+
+        jLabel6.setText(resourceMap.getString("jLabel6.text")); // NOI18N
+        jLabel6.setName("jLabel6"); // NOI18N
+
+        HosMysText.setText(resourceMap.getString("HosMysText.text")); // NOI18N
+        HosMysText.setName("HosMysText"); // NOI18N
+
+        pathblast.setText(resourceMap.getString("pathblast.text")); // NOI18N
+        pathblast.setName("pathblast"); // NOI18N
+        pathblast.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                pathblastMouseClicked(evt);
+            }
+        });
+
+        jLabel7.setText(resourceMap.getString("jLabel7.text")); // NOI18N
+        jLabel7.setName("jLabel7"); // NOI18N
+
+        jButton3.setBackground(resourceMap.getColor("help.background")); // NOI18N
+        jButton3.setText(resourceMap.getString("help.text")); // NOI18N
+        jButton3.setBorderPainted(false);
+        jButton3.setFocusable(false);
+        jButton3.setName("help"); // NOI18N
+        jButton3.setOpaque(true);
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
+
+        jButton1.setBackground(resourceMap.getColor("jButton1.background")); // NOI18N
+        jButton1.setText(resourceMap.getString("jButton1.text")); // NOI18N
+        jButton1.setBorderPainted(false);
+        jButton1.setFocusable(false);
+        jButton1.setName("jButton1"); // NOI18N
+        jButton1.setOpaque(true);
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
+        jButton2.setBackground(resourceMap.getColor("jButton2.background")); // NOI18N
+        jButton2.setText(resourceMap.getString("jButton2.text")); // NOI18N
+        jButton2.setBorderPainted(false);
+        jButton2.setFocusable(false);
+        jButton2.setName("jButton2"); // NOI18N
+        jButton2.setOpaque(true);
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+
+        jLabel8.setFont(resourceMap.getFont("jLabel8.font")); // NOI18N
+        jLabel8.setText(resourceMap.getString("jLabel8.text")); // NOI18N
+        jLabel8.setName("jLabel8"); // NOI18N
+
+        jLabel9.setFont(resourceMap.getFont("jLabel9.font")); // NOI18N
+        jLabel9.setText(resourceMap.getString("jLabel9.text")); // NOI18N
+        jLabel9.setName("jLabel9"); // NOI18N
+
+        jLabel10.setFont(resourceMap.getFont("jLabel10.font")); // NOI18N
+        jLabel10.setText(resourceMap.getString("jLabel10.text")); // NOI18N
+        jLabel10.setName("jLabel10"); // NOI18N
+
+        jSeparator1.setName("jSeparator1"); // NOI18N
+
+        jSeparator2.setName("jSeparator2"); // NOI18N
+
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jSeparator2, javax.swing.GroupLayout.DEFAULT_SIZE, 532, Short.MAX_VALUE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(27, 27, 27)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(jLabel4)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(UseMysText, javax.swing.GroupLayout.DEFAULT_SIZE, 129, Short.MAX_VALUE))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(jLabel5)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(PswMysText, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(jLabel6)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(HosMysText, javax.swing.GroupLayout.DEFAULT_SIZE, 129, Short.MAX_VALUE)))
+                                .addGap(28, 28, 28)
+                                .addComponent(CreSQBut, javax.swing.GroupLayout.DEFAULT_SIZE, 144, Short.MAX_VALUE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jButton3)
+                                .addGap(183, 183, 183))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(jLabel7)
+                                        .addGap(130, 130, 130))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(pathblast, javax.swing.GroupLayout.PREFERRED_SIZE, 214, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(18, 18, 18)))
+                                .addGap(18, 18, 18)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(CloseButAdapFrame, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 128, Short.MAX_VALUE)
+                                    .addComponent(GetMirBut, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 128, Short.MAX_VALUE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(24, 24, 24)
+                                .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(22, 22, 22)
+                                .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(54, 54, 54))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 195, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jButton1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(CheMysBut, javax.swing.GroupLayout.DEFAULT_SIZE, 144, Short.MAX_VALUE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(56, 56, 56))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jButton2)
+                        .addContainerGap(331, Short.MAX_VALUE))
+                    .addComponent(jSeparator1, javax.swing.GroupLayout.DEFAULT_SIZE, 532, Short.MAX_VALUE)))
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(28, 28, 28)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel2)
+                            .addComponent(jButton1)
+                            .addComponent(CheMysBut)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(23, 23, 23)
+                        .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(35, 35, 35)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel1)
+                            .addComponent(jButton2))
+                        .addGap(19, 19, 19)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(121, 121, 121)
+                                .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(20, 20, 20)
+                                .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(18, 18, 18)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(jLabel3)
+                                    .addComponent(jButton3))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(jLabel7)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(pathblast, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(GetMirBut))
+                                .addGap(36, 36, 36)
+                                .addComponent(CloseButAdapFrame))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(8, 8, 8)
+                                .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addContainerGap())
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(81, 81, 81)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel4)
+                            .addComponent(UseMysText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel5)
+                            .addComponent(PswMysText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel6)
+                            .addComponent(HosMysText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(CreSQBut))
+                        .addContainerGap(208, Short.MAX_VALUE))))
+        );
+
+        pack();
+    }// </editor-fold>//GEN-END:initComponents
+
+    private void CreSQButActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CreSQButActionPerformed
+
+
+    
+
+        try
+    {
+          Class.forName("com.mysql.jdbc.Driver");
+     } catch (Exception e)
+    {
+        e.printStackTrace();
+    }
+
+        try {
+            String host=HosMysText.getText();
+            String user=UseMysText.getText();
+            String pssw=PswMysText.getText();
+            Connection con = (Connection) DriverManager.getConnection ("jdbc:mysql://"+host+"/mysql",user,pssw);
+            Statement statment = (Statement) con.createStatement();
+            statment.executeUpdate("create database IF NOT EXISTS `seqbuster`");
+            statment.executeUpdate("create database IF NOT EXISTS `genome`");
+            statment.executeUpdate("create database IF NOT EXISTS `tracks`");
+
+            statment.executeUpdate("create table IF NOT EXISTS  `seqbuster`.`scriptsGUI` (`date` date NOT NULL,`name` varchar(40) collate utf8_unicode_ci NOT NULL,`type` varchar(40) collate utf8_unicode_ci NOT NULL default 'General', description text collate utf8_unicode_ci NOT NULL, samples tinyint(3) unsigned NOT NULL, groups tinyint(3) unsigned NOT NULL, script varchar(40) collate utf8_unicode_ci NOT NULL, link varchar(20) collate utf8_unicode_ci NOT NULL, `user` varchar(50) collate utf8_unicode_ci NOT NULL, `order` tinyint(4) NOT NULL, UNIQUE KEY `name` (`name`), KEY `date` (`date`,`user`), KEY `type` (`type`)) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci");
+     
+            statment.executeUpdate("create table IF NOT EXISTS  `seqbuster`.`project` (`name` varchar (20),`date` date not null,  PRIMARY KEY (`name`))");
+      
+            statment.executeUpdate("create table IF NOT EXISTS `seqbuster`.`genome` (`name` varchar (20),`specie` varchar(10) not null,  PRIMARY KEY (`name`))");
+
+            statment.executeUpdate("create table IF NOT EXISTS  `seqbuster`.`track` (`name` varchar (20),`specie`  varchar(10) not null,  PRIMARY KEY (`name`))");
+            statment.executeUpdate("use `seqbuster`");
+        
+        //get scriptsfile
+        boolean success = (new File("Rscripts")).mkdir();
+        if (!success) {
+            JOptionPane.showMessageDialog(null,"Error!!!!.Copy this message and send to lorena.pantano@crg.es : error creating Rscripts");
+        }
+        boolean success1 = (new File("Rscripts/R")).mkdir();
+        if (!success1) {
+            JOptionPane.showMessageDialog(null,"Error!!!!.Copy this message and send to lorena.pantano@crg.es : error creating Rscripts/R");
+        }
+        boolean success2 = (new File("Rscripts/GUIR")).mkdir();
+        if (!success2) {
+            JOptionPane.showMessageDialog(null,"Error!!!!.Copy this message and send to lorena.pantano@crg.es : error creating Rscripts/GUIR");
+        }
+        URL url = null;
+        try {
+            url = new URL("http://estivill_lab.crg.es/seqbuster/scriptGUI.sql");
+            URLConnection urlConnection = url.openConnection();
+            urlConnection.connect();
+            InputStream input = url.openStream();
+
+            try {
+                FileWriter fw = new FileWriter("Rscripts/script.sql");
+                Reader reader = new InputStreamReader(input);
+                BufferedReader bufferedReader = new BufferedReader(reader);
+                String l=null;
+                while ((l=bufferedReader.readLine())!=null){
+                    //statment.executeUpdate(l);
+                    fw.write(l);
+                }
+                fw.close();
+                
+            } catch (IOException ex) {
+                Logger.getLogger(firstrunFrame.class.getName()).log(Level.SEVERE, null, ex);
+                JOptionPane.showMessageDialog(null,"Error!!!!.Copy this message and send to lorena.pantano@crg.es :"+ex);
+            }
+        
+
+
+        } catch (Exception ex) {
+                Logger.getLogger(firstrunFrame.class.getName()).log(Level.SEVERE, null, ex);
+                JOptionPane.showMessageDialog(null,"Error!!!!.Copy this message and send to lorena.pantano@crg.es :"+ex);
+                
+           
+        }
+        //seqbuster.R
+        try {
+            url = new URL("http://estivill_lab.crg.es/seqbuster/javaapp/SeqBuster.R");
+            URLConnection urlConnection = url.openConnection();
+            urlConnection.connect();
+            InputStream input = url.openStream();
+
+            try {
+                FileWriter fw = new FileWriter("Rscripts/SeqBuster.R");
+                Reader reader = new InputStreamReader(input);
+                BufferedReader bufferedReader = new BufferedReader(reader);
+                String l=null;
+                fw.write("localhost<-\""+host+"\"\n");
+                fw.write("user<-\""+user+"\"\n");
+                fw.write("db<-\"seqbuster\"\n");
+                fw.write("psswd<-\""+pssw+"\"\n");
+                while ((l=bufferedReader.readLine())!=null){
+                    //statment.executeUpdate(l);
+                    fw.write(l+"\n");
+                }
+                fw.close();
+
+            } catch (IOException ex) {
+                Logger.getLogger(firstrunFrame.class.getName()).log(Level.SEVERE, null, ex);
+                JOptionPane.showMessageDialog(null,"Error!!!!.Copy this message and send to lorena.pantano@crg.es :"+ex);
+            }
+
+
+
+        } catch (Exception ex) {
+            Logger.getLogger(firstrunFrame.class.getName()).log(Level.SEVERE, null, ex);
+            JOptionPane.showMessageDialog(null,"Error!!!!.Copy this message and send to lorena.pantano@crg.es :"+ex);
+        }
+        //functions scripts
+        try {
+            url = new URL("http://estivill_lab.crg.es/seqbuster/javaapp/R/list");
+            URLConnection urlConnection = url.openConnection();
+            urlConnection.connect();
+            InputStream input = url.openStream();
+
+            try {
+                
+                Reader reader = new InputStreamReader(input);
+                BufferedReader bufferedReader = new BufferedReader(reader);
+                String l=null;
+                while ((l=bufferedReader.readLine())!=null){
+
+                    FileWriter fw = new FileWriter("Rscripts/R/"+l);
+                    URL url2 = new URL("http://estivill_lab.crg.es/seqbuster/javaapp/R/"+l);
+                    URLConnection urlConnection2 = url2.openConnection();
+                    urlConnection2.connect();
+                    InputStream input2 = url2.openStream();
+                    Reader reader2 = new InputStreamReader(input2);
+                    BufferedReader bufferedReader2 = new BufferedReader(reader2);
+                    String l2=null;
+                    while ((l2=bufferedReader2.readLine())!=null){
+                        fw.write(l2+"\n");
+
+                    }
+                    fw.close();
+                }
+                
+
+            } catch (IOException ex) {
+                Logger.getLogger(firstrunFrame.class.getName()).log(Level.SEVERE, null, ex);
+                JOptionPane.showMessageDialog(null,"Error!!!!.Copy this message and send to lorena.pantano@crg.es :"+ex);
+            }
+
+
+
+
+        } catch (Exception ex) {
+            Logger.getLogger(firstrunFrame.class.getName()).log(Level.SEVERE, null, ex);
+            JOptionPane.showMessageDialog(null,"Error!!!!.Copy this message and send to lorena.pantano@crg.es :"+ex);
+        }
+
+        //guir scripts
+        //functions scripts
+        try {
+            url = new URL("http://estivill_lab.crg.es/seqbuster/javaapp/GUIR/list");
+            URLConnection urlConnection = url.openConnection();
+            urlConnection.connect();
+            InputStream input = url.openStream();
+
+            try {
+
+                Reader reader = new InputStreamReader(input);
+                BufferedReader bufferedReader = new BufferedReader(reader);
+                String l=null;
+                while ((l=bufferedReader.readLine())!=null){
+
+                    FileWriter fw = new FileWriter("Rscripts/GUIR/"+l);
+                    URL url2 = new URL("http://estivill_lab.crg.es/seqbuster/javaapp/GUIR/"+l);
+                    URLConnection urlConnection2 = url2.openConnection();
+                    urlConnection2.connect();
+                    InputStream input2 = url2.openStream();
+                    Reader reader2 = new InputStreamReader(input2);
+                    BufferedReader bufferedReader2 = new BufferedReader(reader2);
+                    String l2=null;
+                    while ((l2=bufferedReader2.readLine())!=null){
+                        fw.write(l2+"\n");
+
+                    }
+                    fw.close();
+                }
+
+
+            } catch (IOException ex) {
+                Logger.getLogger(firstrunFrame.class.getName()).log(Level.SEVERE, null, ex);
+                JOptionPane.showMessageDialog(null,"Error!!!!.Copy this message and send to lorena.pantano@crg.es :"+ex);
+            }
+
+            //guir scripts
+
+
+        } catch (Exception ex) {
+            Logger.getLogger(firstrunFrame.class.getName()).log(Level.SEVERE, null, ex);
+            JOptionPane.showMessageDialog(null,"Error!!!!.Copy this message and send to lorena.pantano@crg.es :"+ex);
+        }
+        //date update
+        try {
+            url = new URL("http://estivill_lab.crg.es/seqbuster/javaapp/date");
+            URLConnection urlConnection = url.openConnection();
+            urlConnection.connect();
+            InputStream input = url.openStream();
+
+            try {
+                FileWriter fw = new FileWriter("Rscripts/date");
+                Reader reader = new InputStreamReader(input);
+                BufferedReader bufferedReader = new BufferedReader(reader);
+                String l=null;
+             
+                while ((l=bufferedReader.readLine())!=null){
+                    //statment.executeUpdate(l);
+                    fw.write(l+"\n");
+                }
+                fw.close();
+
+            } catch (IOException ex) {
+                Logger.getLogger(firstrunFrame.class.getName()).log(Level.SEVERE, null, ex);
+                JOptionPane.showMessageDialog(null,"Error!!!!.Copy this message and send to lorena.pantano@crg.es :"+ex);
+            }
+
+
+
+        } catch (Exception ex) {
+            Logger.getLogger(firstrunFrame.class.getName()).log(Level.SEVERE, null, ex);
+            JOptionPane.showMessageDialog(null,"Error!!!!.Copy this message and send to lorena.pantano@crg.es :"+ex);
+        }
+
+         JOptionPane.showMessageDialog(null,"SeqBuster database created succefully.");
+        statment.close();
+        con.close();
+        } catch (SQLException ex) {
+            Logger.getLogger(SeqBuster20View.class.getName()).log(Level.SEVERE, null, ex);
+            JOptionPane.showMessageDialog(null,"Error!!!!.Copy this message and send to lorena.pantano@crg.es :"+ex);
+        }
+               
+        //get Rscript list and copy Rscripts and save in in R folder
+        
+        
+    }//GEN-LAST:event_CreSQButActionPerformed
+
+    private void CloseButAdapFrameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CloseButAdapFrameActionPerformed
+        // TODO add your handling code here:
+        SeqBuster20View.pannel.setSelectedIndex(2);
+        setVisible(false);
+        
+    }//GEN-LAST:event_CloseButAdapFrameActionPerformed
+
+    private void GetMirButActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GetMirButActionPerformed
+        //TODO add your handling code here:
+        //create db folder
+         boolean success = (new File("DB")).mkdir();
+        if (!success) {
+
+        }
+        //get filefasta.db and copy to db folder
+        //get indexfiles of precursors and upload to seqbuster db
+        //get marute coordinates in precursors and upload to seqbuster db
+    try
+    {
+          Class.forName("com.mysql.jdbc.Driver");
+     } catch (Exception e)
+    {
+        e.printStackTrace();
+        JOptionPane.showMessageDialog(null,"Error!!!!.Copy this message and send to lorena.pantano@crg.es :"+e);
+    }
+         File f = new File(pathblast.getText()+"/bin/formatdb");
+        if (f.exists()){
+        try {
+            URL url = null;
+            String host=HosMysText.getText();
+            String user=UseMysText.getText();
+            String pssw=PswMysText.getText();
+            Connection con = (Connection) DriverManager.getConnection ("jdbc:mysql://"+host+"/seqbuster",user,pssw);
+            Statement statment = (Statement) con.createStatement();
+            statment.executeUpdate("create table IF NOT EXISTS `DBhairpinRNA` (`id` varchar(30),`pos` int unsigned,`len` int(3) unsigned, key (`id`))");
+            statment.executeUpdate("truncate table `DBhairpinRNA`");
+            statment.executeUpdate("create table IF NOT EXISTS `miRNA` (`miRNA` varchar(30),`hRNA` varchar(30),`start` int(3) unsigned,`end` int(3) unsigned, key (`miRNA`))");
+            statment.executeUpdate("truncate table `miRNA`");
+            statment.executeUpdate("create table IF NOT EXISTS `misRNA` (`misRNA` varchar(30),`hRNA` varchar(30),`start` int(3) unsigned,`end` int(3) unsigned, key (`misRNA`))");
+            statment.executeUpdate("truncate table `misRNA`");
+        //hairpin index position
+         
+        
+        try {
+            url = new URL("http://estivill_lab.crg.es/seqbuster/DB/hairpinRNA.db.index");
+            URLConnection urlConnection = url.openConnection();
+            urlConnection.connect();
+            InputStream input = url.openStream();
+
+            try {
+                FileWriter fw = new FileWriter("DB/hairpinRNA.db.index");
+                Reader reader = new InputStreamReader(input);
+                BufferedReader bufferedReader = new BufferedReader(reader);
+                String l=null;
+                while ((l=bufferedReader.readLine())!=null){
+                    //statment.executeUpdate(l);
+                    String [] col=l.split("\t");
+                    statment.executeUpdate("INSERT INTO `DBhairpinRNA` (`id`, `pos`, `len`) VALUES('"+col[0]+"', "+col[1]+","+col[2]+")");
+                    fw.write(l);
+                }
+                fw.close();
+                
+            } catch (IOException ex) {
+                Logger.getLogger(firstrunFrame.class.getName()).log(Level.SEVERE, null, ex);
+            }
+
+
+            JOptionPane.showMessageDialog(null,"hairpin database created succefully.");
+        } catch (Exception ex) {
+            JOptionPane.showMessageDialog(null,"Error!!!!.Copy this message and send to lorena.pantano@crg.es :"+ex);
+            Logger.getLogger(firstrunFrame.class.getName()).log(Level.SEVERE, null, ex);
+        }
+      
+            
+        //miRNA position in hairpin
+       
+        try {
+            url = new URL("http://estivill_lab.crg.es/seqbuster/DB/miRNA.sql");
+            URLConnection urlConnection = url.openConnection();
+            urlConnection.connect();
+            InputStream input = url.openStream();
+
+            try {
+                FileWriter fw = new FileWriter("DB/miRNA.sql");
+                Reader reader = new InputStreamReader(input);
+                BufferedReader bufferedReader = new BufferedReader(reader);
+                String l=null;
+                while ((l=bufferedReader.readLine())!=null){
+                    statment.executeUpdate(l);
+                    fw.write(l);
+                }
+                fw.close();
+                
+            } catch (IOException ex) {
+                JOptionPane.showMessageDialog(null,"Error!!!!.Copy this message and send to lorena.pantano@crg.es :"+ex);
+                Logger.getLogger(firstrunFrame.class.getName()).log(Level.SEVERE, null, ex);
+            }
+
+
+               JOptionPane.showMessageDialog(null,"miRNA database created succefully.");
+        } catch (Exception ex) {
+            JOptionPane.showMessageDialog(null,"Error!!!!.Copy this message and send to lorena.pantano@crg.es :"+ex);
+            Logger.getLogger(firstrunFrame.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+          
+//miRNA star position in hairpin
+        try {
+            url = new URL("http://estivill_lab.crg.es/seqbuster/DB/misRNA.sql");
+            URLConnection urlConnection = url.openConnection();
+            urlConnection.connect();
+            InputStream input = url.openStream();
+
+            try {
+                FileWriter fw = new FileWriter("DB/misRNA.sql");
+                Reader reader = new InputStreamReader(input);
+                BufferedReader bufferedReader = new BufferedReader(reader);
+                String l=null;
+                while ((l=bufferedReader.readLine())!=null){
+                    statment.executeUpdate(l);
+                    fw.write(l);
+                }
+                fw.close();
+                
+            } catch (IOException ex) {
+                JOptionPane.showMessageDialog(null,"Error!!!!.Copy this message and send to lorena.pantano@crg.es :"+ex);
+                Logger.getLogger(firstrunFrame.class.getName()).log(Level.SEVERE, null, ex);
+            }
+
+            JOptionPane.showMessageDialog(null,"miRNA* database created succefully.");
+
+        } catch (Exception ex) {
+            JOptionPane.showMessageDialog(null,"Error!!!!.Copy this message and send to lorena.pantano@crg.es :"+ex);
+            Logger.getLogger(firstrunFrame.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+        //db bin file to get sequence
+           
+        try {
+            url = new URL("http://estivill_lab.crg.es/seqbuster/DB/hairpinRNA.db.bin");
+            URLConnection urlConnection = url.openConnection();
+            urlConnection.connect();
+            InputStream input = url.openStream();
+
+            try {
+                FileWriter fw = new FileWriter("DB/hairpinRNA.db.bin");
+                Reader reader = new InputStreamReader(input);
+                BufferedReader bufferedReader = new BufferedReader(reader);
+                String l=null;
+                while ((l=bufferedReader.readLine())!=null){
+                    l=l.replaceAll("U","T");
+                    fw.write(l);
+                }
+                fw.close();
+           
+            } catch (IOException ex) {
+                JOptionPane.showMessageDialog(null,"Error!!!!.Copy this message and send to lorena.pantano@crg.es :"+ex);
+                Logger.getLogger(firstrunFrame.class.getName()).log(Level.SEVERE, null, ex);
+            }
+
+
+            JOptionPane.showMessageDialog(null,"haripin  sequence database created succefully.");
+        } catch (Exception ex) {
+            JOptionPane.showMessageDialog(null,"Error!!!!.Copy this message and send to lorena.pantano@crg.es :"+ex);
+            Logger.getLogger(firstrunFrame.class.getName()).log(Level.SEVERE, null, ex);
+        }
+           
+         //db fasta file to get sequence
+           
+        try {
+            url = new URL("http://estivill_lab.crg.es/seqbuster/DB/hairpinRNA.db");
+            URLConnection urlConnection = url.openConnection();
+            urlConnection.connect();
+            InputStream input = url.openStream();
+
+            try {
+                FileWriter fw = new FileWriter("DB/hairpinRNA.db");
+                Reader reader = new InputStreamReader(input);
+                BufferedReader bufferedReader = new BufferedReader(reader);
+                String l=null;
+                while ((l=bufferedReader.readLine())!=null){
+                    l=l.replaceAll("U","T");
+                    fw.write(l+"\n");
+                }
+                fw.close();
+
+            } catch (IOException ex) {
+                JOptionPane.showMessageDialog(null,"Error!!!!.Copy this message and send to lorena.pantano@crg.es :"+ex);
+                Logger.getLogger(firstrunFrame.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            
+           
+                DoRuntime(pathblast.getText()+"/bin/formatdb -i DB/hairpinRNA.db -p F ");
+                JOptionPane.showMessageDialog(null,"haripin  sequence database created succefully.");
+//            }else{
+//                JOptionPane.showMessageDialog(null,"Blast was not founded in ;"+pathblast.getText()+"/bin/formatdb");
+//            }
+        } catch (Exception ex) {
+            //String namevar = JOptionPane.showInputDialog("Write a name for the new project: (only alphanumeric characters)" );
+            
+            JOptionPane.showMessageDialog(null,"Error!!!!.Copy this message and send to lorena.pantano@crg.es :"+ex);
+            Logger.getLogger(firstrunFrame.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+        //date update
+        try {
+            url = new URL("http://estivill_lab.crg.es/seqbuster/DB/date");
+            URLConnection urlConnection = url.openConnection();
+            urlConnection.connect();
+            InputStream input = url.openStream();
+
+            try {
+                FileWriter fw = new FileWriter("DB/date");
+                Reader reader = new InputStreamReader(input);
+                BufferedReader bufferedReader = new BufferedReader(reader);
+                String l=null;
+
+                while ((l=bufferedReader.readLine())!=null){
+                    //statment.executeUpdate(l);
+                    fw.write(l+"\n");
+                }
+                fw.close();
+
+            } catch (IOException ex) {
+                Logger.getLogger(firstrunFrame.class.getName()).log(Level.SEVERE, null, ex);
+                JOptionPane.showMessageDialog(null,"Error!!!!.Copy this message and send to lorena.pantano@crg.es :"+ex);
+            }
+
+
+
+        } catch (Exception ex) {
+            Logger.getLogger(firstrunFrame.class.getName()).log(Level.SEVERE, null, ex);
+            JOptionPane.showMessageDialog(null,"Error!!!!.Copy this message and send to lorena.pantano@crg.es :"+ex);
+        }
+
+        statment.close();
+        con.close();
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null,"Error!!!!.Copy this message and send to lorena.pantano@crg.es :"+ex);
+            Logger.getLogger(SeqBuster20View.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+    }else{
+       JOptionPane.showMessageDialog(null,"Blast was not founded in ;"+pathblast.getText()+"/bin/formatdb");
+    }
+
+    }//GEN-LAST:event_GetMirButActionPerformed
+
+    private void CheMysButActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CheMysButActionPerformed
+        // TODO add your handling code here:
+        //connect to db local, error if cracsh
+             try
+    {
+          Class.forName("com.mysql.jdbc.Driver");
+     } catch (Exception e)
+    {
+        e.printStackTrace();
+    }
+        try {
+            String host=HosMysText.getText();
+            String user=UseMysText.getText();
+            String pssw=PswMysText.getText();
+            Connection con = (Connection) DriverManager.getConnection ("jdbc:mysql://"+host+"/mysql",user,pssw);
+
+
+            con.close();
+            JOptionPane.showMessageDialog(null,"MySQL working perfectly.");
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null,"To install mysql go to (Linux):..... or (MacOSX): ..... If the error continues: Copy this message and send to lorena.pantano@crg.es :"+ex);
+            Logger.getLogger(SeqBuster20View.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_CheMysButActionPerformed
+
+    private void pathblastMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pathblastMouseClicked
+        // TODO add your handling code here:
+        JFileChooser c=new JFileChooser(pathblast.getText());
+        String filename;
+        c.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
+        tools check=new tools();
+        int rVal=c.showOpenDialog(this);
+        if (rVal==JFileChooser.APPROVE_OPTION){
+            filename=c.getSelectedFile().toString();
+            boolean Epathdb=check.fileexist(filename);
+            if (Epathdb){
+                pathblast.setText(filename);
+                check.readparameters("seqbuster.op");
+                check.blastpre=filename;
+                check.saveparameters("seqbuster.op");
+                //try{
+                //PrintWriter out=new PrintWriter(new BufferedWriter(new FileWriter("seqbuster.op")));
+                //out.write("");
+                //}catch (IOException ie){
+                //    SeqBusterView.log.append("Cannot create option file!!!You will have to configure the preference options every time you load SeqBuster\n");
+                // }
+            }else{
+
+                Logger.getLogger(SeqBuster20View.class.getName()).log(Level.SEVERE, null, "wrong directory");
+            }
+
+        }
+}//GEN-LAST:event_pathblastMouseClicked
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        // TODO add your handling code here:
+        
+        JOptionPane.showMessageDialog(null,"Download miRNAs database from SeqBuster server ready to use.\n You have to specify where you have installed blast utility donwloaded from  NCBI (choose the directory called blast)");
+    }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        JOptionPane.showMessageDialog(null,"Check if mysql is running.\n If you get some error please make \n sure you have installed mysql.");
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+        JOptionPane.showMessageDialog(null,"Fill with mysql configuration to connect to your database and install SeqBuster DB. If you have not create any new user when installing mysql put 'root' in the user field and leave in blank the password field.");
+    }//GEN-LAST:event_jButton2ActionPerformed
+    public void DoRuntime (String cmd) throws IOException {
+
+       if (cmd.matches("")) {
+         System.err.println("Need command to run");
+         System.exit(-1);
+           }
+       System.out.printf("Output of running %s is:",
+           cmd);
+       Runtime runtime = Runtime.getRuntime();
+       Process process = runtime.exec(cmd);
+       InputStream is = process.getInputStream();
+       InputStreamReader isr = new InputStreamReader(is);
+       BufferedReader br = new BufferedReader(isr);
+       String line;
+
+
+
+       while ((line = br.readLine()) != null) {
+         System.out.println(line);
+       }
+
+    }
+    
+    // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton CheMysBut;
+    private javax.swing.JButton CloseButAdapFrame;
+    private javax.swing.JButton CreSQBut;
+    private javax.swing.JButton GetMirBut;
+    private javax.swing.JTextField HosMysText;
+    private javax.swing.JPasswordField PswMysText;
+    private javax.swing.JTextField UseMysText;
+    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
+    private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JSeparator jSeparator2;
+    public static javax.swing.JTextField pathblast;
+    // End of variables declaration//GEN-END:variables
+    
+}

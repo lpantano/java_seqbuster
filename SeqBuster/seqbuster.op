@@ -1,0 +1,9 @@
+pathblast=/Users/lpantano/biotools
+pathout=/Users/lpantano/Documents/output
+pathfold=/usr/local/bin
+user=root
+host=localhost
+passw=root
+port=
+mysql=
+r=

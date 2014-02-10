@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 30
+/svnroot/adrec/!svn/ver/2/test
+END
+test.fastq.ad
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svnroot/adrec/!svn/ver/10/test/test.fastq.ad
+END
+test.fastq.longer
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svnroot/adrec/!svn/ver/2/test/test.fastq.longer
+END
+test.fastq.complex
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svnroot/adrec/!svn/ver/2/test/test.fastq.complex
+END
+test.fastq.info
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svnroot/adrec/!svn/ver/10/test/test.fastq.info
+END
+test.fastq
+K 25
+svn:wc:ra_dav:version-url
+V 41
+/svnroot/adrec/!svn/ver/1/test/test.fastq
+END
+test.fastq.noad
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svnroot/adrec/!svn/ver/10/test/test.fastq.noad
+END

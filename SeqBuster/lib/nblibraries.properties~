@@ -1,0 +1,10 @@
+libs.absolutelayout.classpath=\
+    ${base}/absolutelayout/AbsoluteLayout.jar
+libs.junit.classpath=\
+    ${base}/junit/junit-3.8.2.jar
+libs.junit_4.classpath=\
+    ${base}/junit_4/junit-4.5.jar
+libs.CopyLibs.classpath=\
+    ${base}/CopyLibs/org-netbeans-modules-java-j2seproject-copylibstask.jar
+libs.MySQLDriver.classpath=\
+    ${base}/mysql-connector-java-5.1.6-bin.jar
