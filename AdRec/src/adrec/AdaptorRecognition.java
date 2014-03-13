@@ -81,7 +81,7 @@ public  class AdaptorRecognition   {
            
 	    
 	    
-            if(l.matches("^[ATGUC]+$") & !(l.contains("N")) & !(l.contains(".")) & !(l.contains(">") )) {
+            if(l.matches("^[ATGUCN]+$") & !(l.contains(".")) & !(l.contains(">") )) {
             //System.out.println("ind:"+seqind+" "+col[seqind]);
             count++;
             if (count%500000==0){

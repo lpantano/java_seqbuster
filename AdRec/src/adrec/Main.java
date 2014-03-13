@@ -22,7 +22,7 @@ public class Main {
         Options jct = new Options();
         //String[] argv = { "-s", "hsa", "-trim", "3" };
         new JCommander(jct, args);
-        if (jct.help){
+        if (jct.help || args.length == 0){
             System.out.println("\njava -jar adrec.jar -i file -a adapter -m 1 -l 8 -c 0.3 -s 15 -e 40 -o output");
             System.out.println("\nexample:java -jar adrec.jar -i test/test.fastq -a ATCTCGTATGCCGTCTTCTGCTTG -m 1 -l 8 -c 0.3 -s 15 -e 40 -o test/out");
             System.out.println("example: see output at adrec/test/out.ad & adrec/test/seq.noad");
