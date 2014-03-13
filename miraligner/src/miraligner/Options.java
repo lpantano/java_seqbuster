@@ -40,6 +40,11 @@ public class Options {
   @Parameter(names = "-o", description = "output", required = true)
   public String output;
   
+  @Parameter(names = "-freq", description = "add freq information")
+  public boolean freq;
+  
+  @Parameter(names = "-pre", description = "add reads mapping to precursor")
+  public boolean pre;
   
   @Parameter(names = "-h", description = "help mode",help=true)
   public boolean help;

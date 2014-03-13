@@ -18,14 +18,14 @@ public class Main {
         
         
         String format = "None";
-        String test="test";
+        String test="";
         if (test.equals("test")){
-            map.readseq("test/test.fa","DB","hsa",1,3,3,"fasta","test");
+            map.readseq("test/test.fa","DB","hsa",1,3,3,"fasta","test",false,false);
             System.exit(0);
         }
         Options jct = new Options();
         new JCommander(jct, args);
-        if (jct.help){
+        if (jct.help | args.length<2 ){
             System.out.println("\njava -jar miraligner.jar -sub mismatches -trim trimming-nts -add addition-nts -s species -i read_seq_file -db miRBase_folder_files -o output_file");
             System.out.println("\nexample:java -jar miraligner.jar -sub 1 -trim 3 -add 3 -s hsa -i test/test.fa -db DB -o test/out");
             System.out.println("example: see output at miraligner/test/output.mirna & miraligner/test/output.mirna.opt");
@@ -74,7 +74,7 @@ public class Main {
                 System.err.println("no format file recognized (fasta or tabular)");
                 System.exit(1);
             }
-            map.readseq(jct.input,jct.db,jct.species,mism,trim,add,format,jct.output);
+            map.readseq(jct.input,jct.db,jct.species,mism,trim,add,format,jct.output,jct.freq,jct.pre);
 
        }else{
            System.err.println("species not found: "+jct.species);

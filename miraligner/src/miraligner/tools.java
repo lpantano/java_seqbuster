@@ -104,4 +104,14 @@ public class tools {
          in.close();
          return seq;
      }
+     
+     
+     
+ public static String getFreq(String name){
+  String f="";
+  String [] col=name.split("x");
+  f=col[1];
+  return f;
+ } 
+
 }

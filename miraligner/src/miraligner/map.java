@@ -23,7 +23,7 @@ import java.util.TreeMap;
 public class map {
 
    
-    public static void readseq (String namein,String namedb,String sp,int mm,int tri,int add,String f,String nameo) throws FileNotFoundException, IOException{
+    public static void readseq (String namein,String namedb,String sp,int mm,int tri,int add,String f,String nameo, boolean freq, boolean precursor) throws FileNotFoundException, IOException{
         System.out.println(new Date()+"\n");
         
         String l="";
@@ -239,7 +239,11 @@ public class map {
 
         annotate=mapinfo.size();
         indb.close();
-        out.printf("seq\tname\tmir\tstart\tend\tmism\tadd\tt5\tt3\ts5\ts3\tDB\tambiguity\n");
+        if (freq){
+            out.printf("seq\tname\tfreq\tmir\tstart\tend\tmism\tadd\tt5\tt3\ts5\ts3\tDB\tambiguity\n");
+        }else{
+            out.printf("seq\tname\tmir\tstart\tend\tmism\tadd\tt5\tt3\ts5\ts3\tDB\tambiguity\n");
+        }
         //System.out.println("filtering output");
         for (int nc : mapinfo.keySet()) {
             TreeMap<String,alignment> pret=mapinfo.get(nc);
@@ -302,7 +306,7 @@ public class map {
                         overlap3=1;
                         at.t3="0";
                    }
-                   System.out.println("in Loop  "+overlap3+" "+overlap5);
+                   //System.out.println("in Loop  "+overlap3+" "+overlap5);
                    if (overlap3==1 & overlap5==1 ){
                        overlapp=overlap3;
                        int min=5;
@@ -311,18 +315,30 @@ public class map {
                        if (pos[1]+4>preseq.get(p).length()){max=preseq.get(p).length()-pos[1];}
                        at.s5=preseq.get(p).substring(pos[0]-min,pos[0]+3);
                        at.s3=preseq.get(p).substring(pos[1]-4,pos[1]+max);
-                       String ann=seq+"\t"+nameseq.get(nc)+"\t"+m+"\t"+at.pospre+"\t"+end+"\t"+at.mut+"\t"+at.add+"\t"+at.t5+"\t"+at.t3+"\t"+at.s5+"\t"+at.s3+"\tmiRNA\t";      
+                       String ann="";
+                       if (freq){
+                           ann=seq+"\t"+nameseq.get(nc)+"\t"+tools.getFreq(nameseq.get(nc))+"\t"+m+"\t"+at.pospre+"\t"+end+"\t"+at.mut+"\t"+at.add+"\t"+at.t5+"\t"+at.t3+"\t"+at.s5+"\t"+at.s3+"\tmiRNA\t";      
+                       }else{
+                           ann=seq+"\t"+nameseq.get(nc)+"\t"+m+"\t"+at.pospre+"\t"+end+"\t"+at.mut+"\t"+at.add+"\t"+at.t5+"\t"+at.t3+"\t"+at.s5+"\t"+at.s3+"\tmiRNA\t";
+                       }      
+                       
                        listinfo.put(seq+m,ann);
                        listmirna.put(m,seq);
                         
                        //System.out.printf(seq+"\t"+nameseq.get(nc)+"\t"+m+"\t"+at.pospre+"\t"+end+"\t"+at.mut+"\t"+at.add+"\t"+at.t5+"\t"+at.t3+"\t"+at.s5+"\t"+at.s3+"\tmiRNA\t");
-                        out.printf("%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\tmiRNA\n",seq,m,nameseq.get(nc),at.pospre,end,at.mut,at.add,at.t5,at.t3,at.s5,at.s3);
+                       //out.printf("%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\tmiRNA\n",seq,m,nameseq.get(nc),at.pospre,end,at.mut,at.add,at.t5,at.t3,at.s5,at.s3);
                        
                      }
                 }
             }
-            if (overlapp==0){
-                  out.printf("%s\t%s\t%s\t%s\t%s\t%s\t%s\t0\t0\t0\t0\tprecursor\t%s\n",hashseq.get(nc),p,nameseq.get(nc),at.pospre,end,at.mut,at.add,ambmir);
+            if (overlapp==0 & precursor==true){
+               String pann="";
+               if (freq){
+                   pann=hashseq.get(nc)+"\t"+nameseq.get(nc)+"\t"+tools.getFreq(nameseq.get(nc))+"\t"+p+"\t"+at.pospre+"\t"+end+"\t"+at.mut+"\t"+at.add+"\t0\t0\t0\t0\tprecursor\t"+ambmir+"\n";      
+               }else{
+                   pann=hashseq.get(nc)+"\t"+nameseq.get(nc)+"\t"+p+"\t"+at.pospre+"\t"+end+"\t"+at.mut+"\t"+at.add+"\t0\t0\t0\t0\tprecursor\t"+ambmir+"\n";
+               }
+                  out.printf(pann);
                   //System.out.printf("PRE %s\t%s\t%s\t%s\t0\t0\t0\t0\tprecursor\n\n",hashseq.get(nc),p,at.mut,at.add);
                   //System.out.println(seq+"\t"+nameseq.get(nc)+"\t"+p+"\t"+at.pospre+"\t"+end+"\t"+at.mut+"\t"+at.add+"\tNA\tNA\tNA\tNA\tprecursor\t"+ambmir+"\t");      
             }
@@ -477,7 +493,7 @@ public class map {
                 i=minlen+10;
             }
         }
-        System.out.println(alg.scmut+" "+alg.mut);
+        //System.out.println(alg.scmut+" "+alg.mut);
 
         return alg;
      }
