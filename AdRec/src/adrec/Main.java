@@ -79,18 +79,14 @@ public class Main {
             
         }
         if ( f  ){
-        //if(true){
             System.out.println("Go to adapter recognition...");
             System.out.println("Mismatches: "+mm);
             System.out.println("Length to be recognized: "+len);
             System.out.println("Complexity threshold: "+com);
-            System.out.println("Adapter: "+args[1]);
+            System.out.println("Adapter: "+ad);
             System.out.println("Minimum size seqs: "+cutsmall);
             System.out.println("Maximum size seqs: "+cutlong);
-//            go to adapter
-//            String pathout, String ad,String ad5,int fasta,String header,int skip, Double com,int lenad, int mmad,int mincount
             AdaptorRecognition.readfilesimple(jct.input, ad, com, len, mm, 1,cutsmall, cutlong,jct.output);
-//           
         }
     }
 

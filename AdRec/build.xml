@@ -27,7 +27,7 @@
      <target name="copy-svn-stable">
         <property file="nbproject/project.properties"/>
        
-        <copy  file="${dist.dir}-${version}/adrec.jar" todir="../../git_seqbuster/modules/adrec" />
+        <copy  file="${dist.dir}-${version}/adrec.jar" todir="../../seqbuster/modules/adrec" />
      </target> 
      
     <target name="copy-source">
