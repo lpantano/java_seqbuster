@@ -29,8 +29,6 @@ public class Main {
             System.out.println("\n");
             System.exit(1);
         }
-        //check input file
-        boolean f=tools.checkinput(jct.input);
         //check directory
         String ad=jct.adapt;
 
@@ -78,7 +76,6 @@ public class Main {
             System.exit(1);
             
         }
-        if ( f  ){
             System.out.println("Go to adapter recognition...");
             System.out.println("Mismatches: "+mm);
             System.out.println("Length to be recognized: "+len);
@@ -87,7 +84,6 @@ public class Main {
             System.out.println("Minimum size seqs: "+cutsmall);
             System.out.println("Maximum size seqs: "+cutlong);
             AdaptorRecognition.readfilesimple(jct.input, ad, com, len, mm, 1,cutsmall, cutlong,jct.output);
-        }
     }
 
 }

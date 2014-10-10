@@ -38,8 +38,20 @@ public class Main {
             System.exit(0);
         }
         //check input file
-        boolean f=tools.checkinput(jct.input);
-        boolean ftab=tools.checkinputtab(jct.input);
+        if ("none".equals(jct.format)){
+            boolean f=tools.checkinput(jct.input);
+            boolean ftab=tools.checkinputtab(jct.input);
+            if (f){
+                format="fasta";
+            }else if (ftab){
+                format="tab";
+            }else{
+                System.err.println("no format file recognized (fasta or tabular)");
+                System.exit(1);
+            }
+        }else{
+            format = jct.format;
+        }
         //check directory
         
         //check species
@@ -65,15 +77,7 @@ public class Main {
             System.out.println("Trimming: "+jct.trim);
             System.out.println("Addition: "+jct.add);
             System.out.println("Species: "+jct.species);
-            if (f){
-                format="fasta";
-            }else if (ftab){
-                format="tab";
             
-            }else{
-                System.err.println("no format file recognized (fasta or tabular)");
-                System.exit(1);
-            }
             map.readseq(jct.input,jct.db,jct.species,mism,trim,add,format,jct.output,jct.freq,jct.pre);
 
        }else{

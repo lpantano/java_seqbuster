@@ -19,12 +19,6 @@ import java.lang.Thread.*;
 
 
 public  class AdaptorRecognition   {
-    
-                   
-         //readfilesimple(filename, pathout, adseq, adseq5, fasta, header, skip, com, lenad, mmad);
-  
-
-   
         public static int readfilesimple (String namein, String ad, Double com,int lenad, int mmad,int mincount,int cutsmall,int cutlong,String nameo)  throws IOException{
 
         //DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
@@ -40,7 +34,6 @@ public  class AdaptorRecognition   {
         int comxseq=0;
         int longseq=0;
         int noadseq=0;
-//        System.out.println(infoad);
 
         HashMap<String,Integer> seq = new HashMap<String,Integer>();
 
@@ -49,21 +42,18 @@ public  class AdaptorRecognition   {
         String [] col;
         String  prefix="";
         String sufix="";
-        //String  prefix5="";
         String sufix5="";
         int lenadtotal=ad.length();
         String [] r;
         int seqind=0,i,count=0,detected=0;
         Double comseq=0.0;
         
-        //col = namein.split("\\/");
-        //String nameannfile=col[col.length-1];
         PrintWriter outinfo=new PrintWriter(new BufferedWriter(new FileWriter(nameo+".info")));
         PrintWriter out=new PrintWriter(new BufferedWriter(new FileWriter(nameo+".ad")));
         PrintWriter outcom=new PrintWriter(new BufferedWriter(new FileWriter(nameo+".complex")));
         PrintWriter outnoad=new PrintWriter(new BufferedWriter(new FileWriter(nameo+".noad")));
         PrintWriter outlong=new PrintWriter(new BufferedWriter(new FileWriter(nameo+".longer")));
-	BufferedReader in= new BufferedReader(new FileReader(namein));
+	BufferedReader in= tools.readFromInput(namein);
         //String ad;
 		//StringBuilder sd=new StringBuilder();
      
@@ -73,14 +63,7 @@ public  class AdaptorRecognition   {
 
         System.out.print(" lines: 0 -> sequences 0...");
 	while ((l=in.readLine())!=null)	{
-            //System.out.println("ind:"+seqind+" "+col[seqind]+" "+l+" "+fasta);
-                //l=in.readLine();
-                
-           seqind=0;
-                //System.out.println("ind:"+seqind+" "+col[seqind]+" "+l+" "+fasta);
-           
-	    
-	    
+            seqind=0;
             if(l.matches("^[ATGUCN]+$") & !(l.contains(".")) & !(l.contains(">") )) {
             //System.out.println("ind:"+seqind+" "+col[seqind]);
             count++;
@@ -97,14 +80,7 @@ public  class AdaptorRecognition   {
             r=getadapter3(prefix,ad,lenad,0,lenadtotal,mmad);
             prefix=r[0];
             sufix=r[1];
-
-
-            //System.out.println("s:"+prefix+",a:"+sufix );
-
-            //get adapter infor
-            comseq=complex(prefix);
-            
-           // System.out.println("s:"+prefix+" f: "+sufix+" com "+comseq);
+           comseq=complex(prefix);
             if (comseq>=com & prefix.length()<l.length()){
                 totalseqdect++;
                 lendist[prefix.length()+1]=lendist[prefix.length()+1]+1;
@@ -144,17 +120,15 @@ public  class AdaptorRecognition   {
 
              freq=seq.get(s);
              if (freq>0 & !(s.contains("."))){
-                    //System.out.println(s+":"+seq.get(s)+",ad:"+weblogo+" ad5:"+weblogo5 );
+                 //System.out.println(s+":"+seq.get(s)+",ad:"+weblogo+" ad5:"+weblogo5 );
                  //out.write(s+"\t"+seq.get(s)+"\n");
                  int len=s.length();
                  //System.out.println(s+"\t"+freq+"\n");
                  if (seq.get(s)>=mincount & len>=cutsmall & len<=cutlong ){
                      countseq++;
                     // String insertreads="insert ignore into `reads` values ('','"+s+"')";
-                     //statment.executeUpdate(insertreads);
                      rnaseq=rnaseq+seq.get(s);
-                     out.write(s+"\t"+seq.get(s)+"\n");
-                     
+                     out.write(s+"\t"+seq.get(s)+"\n");                    
                      //System.out.println="insert into `"+nameexp+"` values ("+countseq+",'"+s+"',"+seq.get(s)+","+len+",1,'na',0,0,'+','na','na','na',100,'na','na','na','na','na','1','na','na','0','0',0,0,0)";
                  }else if(len>cutlong){
                     //save longer sequences

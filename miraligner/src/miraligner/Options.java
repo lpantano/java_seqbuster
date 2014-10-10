@@ -48,5 +48,8 @@ public class Options {
   
   @Parameter(names = "-h", description = "help mode",help=true)
   public boolean help;
+  
+  @Parameter(names = "-fo", description = "format input")
+  public String format = "none";
 
 }

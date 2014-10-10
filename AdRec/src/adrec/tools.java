@@ -10,6 +10,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+import java.io.InputStreamReader;
 
 
 public class tools {
@@ -56,4 +57,17 @@ public class tools {
         }
         return false;
      }
+     
+    public static BufferedReader readFromInput(String namein)throws FileNotFoundException, IOException{
+        if ("/dev/stdin".equals(namein)){
+            BufferedReader bf = new BufferedReader(new FileReader(namein));
+            return bf;
+        }else{
+            BufferedReader bf = new BufferedReader(new InputStreamReader(System.in));
+            return bf;
+        }
+        
+    }
+     
+     
 }

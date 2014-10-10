@@ -7,6 +7,7 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.TreeMap;
+import java.io.InputStreamReader;
 
 
 public class tools {
@@ -71,18 +72,14 @@ public class tools {
         String l="";
         System.out.println("Reading reads");
  
-        BufferedReader in= new BufferedReader(new FileReader(namein));
-
-         TreeMap<String,String> seq = new TreeMap<String,String>();
-         if ("fasta".equals(f)){
+        BufferedReader in= readFromInput(namein);
+                
+        TreeMap<String,String> seq = new TreeMap<String,String>();
+        if ("fasta".equals(f)){
              while ((l=in.readLine())!=null){
-                if (l.contains(">")){
-
+                if (l.contains(">")){   
                     namecode++;
                     String name=l.replace(">","");
-
-                    //String [] col=l.split("\t");
-
                     seq.put(name, in.readLine());
                 }
 
@@ -90,13 +87,10 @@ public class tools {
          }else{
              Integer idx=0;
             while ((l=in.readLine())!=null){
-                    
                     idx++;
                     String [] col=l.split("\t");
                     String name="seq_"+idx+"_x"+col[1];
                     seq.put(name, col[0]);
-                    //System.out.println(name);
-
             }
  
          
@@ -105,7 +99,16 @@ public class tools {
          return seq;
      }
      
-     
+     public static BufferedReader readFromInput(String namein)throws FileNotFoundException, IOException{
+        if ("/dev/stdin".equals(namein)){
+            BufferedReader bf = new BufferedReader(new FileReader(namein));
+            return bf;
+        }else{
+            BufferedReader bf = new BufferedReader(new InputStreamReader(System.in));
+            return bf;
+        }
+        
+     }
      
  public static String getFreq(String name){
   String f="";
