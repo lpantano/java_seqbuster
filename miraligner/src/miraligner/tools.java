@@ -100,7 +100,7 @@ public class tools {
      }
      
      public static BufferedReader readFromInput(String namein)throws FileNotFoundException, IOException{
-        if ("/dev/stdin".equals(namein)){
+        if (!"/dev/stdin".equals(namein)){
             BufferedReader bf = new BufferedReader(new FileReader(namein));
             return bf;
         }else{

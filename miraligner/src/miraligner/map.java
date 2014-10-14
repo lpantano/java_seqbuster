@@ -23,7 +23,7 @@ import java.util.TreeMap;
 public class map {
 
    
-    public static void readseq (String namein,String namedb,String sp,int mm,int tri,int add,String f,String nameo, boolean freq, boolean precursor) throws FileNotFoundException, IOException{
+    public static void readseq (String namein,String namedb,String sp,int mm,int tri,int add,String f,String nameo, boolean freq, boolean precursor, Integer minl) throws FileNotFoundException, IOException{
         System.out.println(new Date()+"\n");
         
         String l="";
@@ -91,7 +91,7 @@ public class map {
             namecode++;
             nameseq.put(namecode,name);
             //System.out.println(name+"\n");
-            if (l.length()>=16 & l.length()<=50){
+            if (l.length()>=minl & l.length()<=50){
                 l=l.replaceAll("U","T");
                 //System.out.println(l+"\n");
                 hashseq.put(namecode,l);

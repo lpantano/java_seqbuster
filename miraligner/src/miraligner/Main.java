@@ -20,7 +20,7 @@ public class Main {
         String format = "None";
         String test="";
         if (test.equals("test")){
-            map.readseq("test/test.fa","DB","hsa",1,3,3,"fasta","test",false,false);
+            map.readseq("test/test.fa","DB","hsa",1,3,3,"fasta","test",false,false,17);
             System.exit(0);
         }
         Options jct = new Options();
@@ -71,6 +71,10 @@ public class Main {
            System.out.println("Only allowed <=3 nucleotides as addition");
            sp=false;
         }
+        if (jct.minl<16){
+           System.out.println("Only allowed >16 minimum size");
+           jct.minl=16;
+        }
         if (sp  ){
             System.out.println("Go to mapping...");
             System.out.println("Mismatches: "+jct.sub);
@@ -78,7 +82,7 @@ public class Main {
             System.out.println("Addition: "+jct.add);
             System.out.println("Species: "+jct.species);
             
-            map.readseq(jct.input,jct.db,jct.species,mism,trim,add,format,jct.output,jct.freq,jct.pre);
+            map.readseq(jct.input,jct.db,jct.species,mism,trim,add,format,jct.output,jct.freq,jct.pre,jct.minl);
 
        }else{
            System.err.println("species not found: "+jct.species);

@@ -52,4 +52,7 @@ public class Options {
   @Parameter(names = "-fo", description = "format input")
   public String format = "none";
 
+  @Parameter(names = "-minl", description = "minimum size")
+  public Integer minl = 18;
+  
 }
