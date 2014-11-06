@@ -17,7 +17,7 @@ public class tools {
         String l="";
         BufferedReader in= new BufferedReader(new FileReader(namein));
         l=in.readLine();
-        if (!l.contains(">")){
+        if (!l.contains(">") & !l.contains("@")){
             System.out.println("Format is not fasta, guessing tabular");
            return false;
         }
@@ -82,7 +82,13 @@ public class tools {
                     String name=l.replace(">","");
                     seq.put(name, in.readLine());
                 }
-
+                if (l.contains("@")){   
+                    namecode++;
+                    String name=l.replace("@","");
+                    seq.put(name, in.readLine());
+                    in.readLine();
+                    in.readLine();
+                }
             }
          }else{
              Integer idx=0;
