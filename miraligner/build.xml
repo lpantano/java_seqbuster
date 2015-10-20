@@ -20,21 +20,23 @@
         <copy  file="test/output.mirna.ann" todir="miraligner-${version}/test" />
         <copy  file="test/output.mirna.opt" todir="miraligner-${version}/test" />
         <copy  file="README.TXT" tofile="miraligner-${version}/MANUAL.TXT" />
+        <copy  file="miraligner-${version}/miraligner.jar" todir="../../seqbuster/modules/miraligner" />
+     
     </target>
     
 
      <target name="copy-svn-stable">
         
        
-        <copy  file="miraligner-${version}/miraligner.jar" todir="../git_seqbuster/seqbuster/modules/miraligner" />
+        <copy  file="miraligner-${version}/miraligner.jar" todir="../../seqbuster/seqbuster/modules/miraligner" />
         
      </target>
      
      <target name="copy-source">
          
-     <copy todir="../git_seqbuster/seqbuster/modules/src/miraligner" >
+     <copy todir="../seqbuster/seqbuster/modules/src/miraligner" >
             <fileset dir="src/miraligner/" />
-        </copy>
+     </copy>
      
      </target>
 

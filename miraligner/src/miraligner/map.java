@@ -202,7 +202,6 @@ public class map {
                                     //System.out.print(namechr+" "+pospretemp+" "+" mapped "+alg.scmut+" "+alg.mut+" "+alg.add+"\n");
                                     alg.pospre=pospretemp;
                                     //do micro alignment
-                                    //alg=getmicroalig(alg,l.substring(i-5,i+alg.hit+5),micropos.get(namechr));
                                     if (!scoreseq.containsKey(codeseq)){
                                         scoreseq.put(codeseq,alg.sc);
                                         TreeMap<String,alignment> prealg = new TreeMap<String,alignment>();
@@ -270,27 +269,27 @@ public class map {
                    //overlap
                    if (pos[0]-at.pospre<=tri & pos[0]-at.pospre>0){
                         //get t5
-                        at.t5="u-"+preseq.get(p).substring(at.pospre-1,pos[0]-1);
+                        at.t5=preseq.get(p).substring(at.pospre-1,pos[0]-1).toUpperCase();
                         //System.out.println("q5"+at.t5);
                         overlap5=1;
                    }
                    if (at.pospre-pos[0]<=tri & at.pospre-pos[0]>0){
                         //get t5
-                        at.t5="d-"+preseq.get(p).substring(pos[0]-1,at.pospre-1);
+                        at.t5=preseq.get(p).substring(pos[0]-1,at.pospre-1).toLowerCase();
                         //System.out.println("t5"+at.t5);
                         overlap5=1;
                    }
 
                    if (pos[1]-end<=tri & pos[1]-end>0){
                         //get t3
-                        at.t3="u-"+preseq.get(p).substring(end,pos[1]);
+                        at.t3=preseq.get(p).substring(end,pos[1]).toLowerCase();;
                         //System.out.println("t3"+at.t3);
                         overlap3=1;
                    }
                    if (preseq.get(p).length()>end){
                     if (end-pos[1]<=tri & end-pos[1]>0 ){
                         //get t3
-                        at.t3="d-"+preseq.get(p).substring(pos[1],end);
+                        at.t3=preseq.get(p).substring(pos[1],end).toUpperCase();;
                        //System.out.println("q3"+at.t3);
                         overlap3=1;
                     }
@@ -317,9 +316,9 @@ public class map {
                        at.s3=preseq.get(p).substring(pos[1]-4,pos[1]+max);
                        String ann="";
                        if (freq){
-                           ann=seq+"\t"+nameseq.get(nc)+"\t"+tools.getFreq(nameseq.get(nc))+"\t"+m+"\t"+at.pospre+"\t"+end+"\t"+at.mut+"\t"+at.add+"\t"+at.t5+"\t"+at.t3+"\t"+at.s5+"\t"+at.s3+"\tmiRNA\t";      
+                           ann=seq+"\t"+nameseq.get(nc)+"\t"+tools.getFreq(nameseq.get(nc))+"\t"+m+"\t"+at.pospre+"\t"+end+"\t"+at.mut+"\t"+at.add.replace("u-", "")+"\t"+at.t5+"\t"+at.t3+"\t"+at.s5+"\t"+at.s3+"\tmiRNA\t";      
                        }else{
-                           ann=seq+"\t"+nameseq.get(nc)+"\t"+m+"\t"+at.pospre+"\t"+end+"\t"+at.mut+"\t"+at.add+"\t"+at.t5+"\t"+at.t3+"\t"+at.s5+"\t"+at.s3+"\tmiRNA\t";
+                           ann=seq+"\t"+nameseq.get(nc)+"\t"+m+"\t"+at.pospre+"\t"+end+"\t"+at.mut+"\t"+at.add.replace("u-", "")+"\t"+at.t5+"\t"+at.t3+"\t"+at.s5+"\t"+at.s3+"\tmiRNA\t";
                        }      
                        
                        listinfo.put(seq+m,ann);
@@ -334,9 +333,9 @@ public class map {
             if (overlapp==0 & precursor==true){
                String pann="";
                if (freq){
-                   pann=hashseq.get(nc)+"\t"+nameseq.get(nc)+"\t"+tools.getFreq(nameseq.get(nc))+"\t"+p+"\t"+at.pospre+"\t"+end+"\t"+at.mut+"\t"+at.add+"\t0\t0\t0\t0\tprecursor\t"+ambmir+"\n";      
+                   pann=hashseq.get(nc)+"\t"+nameseq.get(nc)+"\t"+tools.getFreq(nameseq.get(nc))+"\t"+p+"\t"+at.pospre+"\t"+end+"\t"+at.mut+"\t"+at.add.replace("u-", "") + "\t0\t0\t0\t0\tprecursor\t"+ambmir+"\n";      
                }else{
-                   pann=hashseq.get(nc)+"\t"+nameseq.get(nc)+"\t"+p+"\t"+at.pospre+"\t"+end+"\t"+at.mut+"\t"+at.add+"\t0\t0\t0\t0\tprecursor\t"+ambmir+"\n";
+                   pann=hashseq.get(nc)+"\t"+nameseq.get(nc)+"\t"+p+"\t"+at.pospre+"\t"+end+"\t"+at.mut+"\t"+at.add.replace("u-", "") +"\t0\t0\t0\t0\tprecursor\t"+ambmir+"\n";
                }
                   out.printf(pann);
                   //System.out.printf("PRE %s\t%s\t%s\t%s\t0\t0\t0\t0\tprecursor\n\n",hashseq.get(nc),p,at.mut,at.add);
@@ -409,7 +408,6 @@ public class map {
             String seeddb2=db.substring(seedmism,seedmism+8);
             alg=alignment(seed2,seeddb2,alg,seedmism);
             //System.out.println("alg scmut "+alg.scmut +"\n");
-            //alg.scmut=mism;
             if (alg.scmut==1){
                 //System.out.println("1 misma "+mism +" p: "+lp+"\n");
                 String t=seq.substring(lp,seq.length());
@@ -427,7 +425,6 @@ public class map {
             String tdb=db.substring(lp,lp+t.length());
             alg=align3end(t,tdb,mism,alg,lp);
             //System.out.println("triming score "+sc +"\n");
-            //lastscore=seq.length()-sct;
         }else{
             alg.scmut=10;
         }
@@ -459,7 +456,7 @@ public class map {
         }
         //System.out.println("#score: "+score+"\n");
         if (score>0){
-            alg.add="u-"+seq.substring(score-1,seq.length());
+            alg.add="I-"+seq.substring(score-1,seq.length());
         }
         //System.out.println("#add: "+alg.add+"\n");
         return alg;
