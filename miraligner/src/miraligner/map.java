@@ -239,9 +239,9 @@ public class map {
         annotate=mapinfo.size();
         indb.close();
         if (freq){
-            out.printf("seq\tname\tfreq\tmir\tstart\tend\tmism\tadd\tt5\tt3\ts5\ts3\tDB\tambiguity\n");
+            out.printf("seq\tname\tfreq\tmir\tstart\tend\tmism\tadd\tt5\tt3\ts5\ts3\tDB\tprecursor\tambiguity\n");
         }else{
-            out.printf("seq\tname\tmir\tstart\tend\tmism\tadd\tt5\tt3\ts5\ts3\tDB\tambiguity\n");
+            out.printf("seq\tname\tmir\tstart\tend\tmism\tadd\tt5\tt3\ts5\ts3\tDB\tprecursor\tambiguity\n");
         }
         //System.out.println("filtering output");
         for (int nc : mapinfo.keySet()) {
@@ -316,9 +316,9 @@ public class map {
                        at.s3=preseq.get(p).substring(pos[1]-4,pos[1]+max);
                        String ann="";
                        if (freq){
-                           ann=seq+"\t"+nameseq.get(nc)+"\t"+tools.getFreq(nameseq.get(nc))+"\t"+m+"\t"+at.pospre+"\t"+end+"\t"+at.mut+"\t"+at.add.replace("u-", "")+"\t"+at.t5+"\t"+at.t3+"\t"+at.s5+"\t"+at.s3+"\tmiRNA\t";      
+                           ann=seq+"\t"+nameseq.get(nc)+"\t"+tools.getFreq(nameseq.get(nc))+"\t"+m+"\t"+at.pospre+"\t"+end+"\t"+at.mut+"\t"+at.add.replace("u-", "")+"\t"+at.t5+"\t"+at.t3+"\t"+at.s5+"\t"+at.s3+"\tmiRNA\t"+p+"\t";      
                        }else{
-                           ann=seq+"\t"+nameseq.get(nc)+"\t"+m+"\t"+at.pospre+"\t"+end+"\t"+at.mut+"\t"+at.add.replace("u-", "")+"\t"+at.t5+"\t"+at.t3+"\t"+at.s5+"\t"+at.s3+"\tmiRNA\t";
+                           ann=seq+"\t"+nameseq.get(nc)+"\t"+m+"\t"+at.pospre+"\t"+end+"\t"+at.mut+"\t"+at.add.replace("u-", "")+"\t"+at.t5+"\t"+at.t3+"\t"+at.s5+"\t"+at.s3+"\tmiRNA\t"+p+"\t";
                        }      
                        
                        listinfo.put(seq+m,ann);
@@ -333,9 +333,9 @@ public class map {
             if (overlapp==0 & precursor==true){
                String pann="";
                if (freq){
-                   pann=hashseq.get(nc)+"\t"+nameseq.get(nc)+"\t"+tools.getFreq(nameseq.get(nc))+"\t"+p+"\t"+at.pospre+"\t"+end+"\t"+at.mut+"\t"+at.add.replace("u-", "") + "\t0\t0\t0\t0\tprecursor\t"+ambmir+"\n";      
+                   pann=hashseq.get(nc)+"\t"+nameseq.get(nc)+"\t"+tools.getFreq(nameseq.get(nc))+"\t"+p+"\t"+at.pospre+"\t"+end+"\t"+at.mut+"\t"+at.add.replace("u-", "") + "\t0\t0\t0\t0\tprecursor\tNA\t"+ambmir+"\n";      
                }else{
-                   pann=hashseq.get(nc)+"\t"+nameseq.get(nc)+"\t"+p+"\t"+at.pospre+"\t"+end+"\t"+at.mut+"\t"+at.add.replace("u-", "") +"\t0\t0\t0\t0\tprecursor\t"+ambmir+"\n";
+                   pann=hashseq.get(nc)+"\t"+nameseq.get(nc)+"\t"+p+"\t"+at.pospre+"\t"+end+"\t"+at.mut+"\t"+at.add.replace("u-", "") +"\t0\t0\t0\t0\tprecursor\tNA\t"+ambmir+"\n";
                }
                   out.printf(pann);
                   //System.out.printf("PRE %s\t%s\t%s\t%s\t0\t0\t0\t0\tprecursor\n\n",hashseq.get(nc),p,at.mut,at.add);
