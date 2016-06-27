@@ -25,7 +25,7 @@
     </target>
     
 
-     <target name="copy-svn-stable">
+     <target name="copy-git-stable">
         
        
         <copy  file="miraligner-${version}/miraligner.jar" todir="../../seqbuster/seqbuster/modules/miraligner" />

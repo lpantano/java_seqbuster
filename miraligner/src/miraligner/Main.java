@@ -18,9 +18,10 @@ public class Main {
         
         
         String format = "None";
-        String test="";
+        String test="notest";
         if (test.equals("test")){
             map.readseq("test/test.fa","DB","hsa",1,3,3,"fasta","test",false,false,17);
+            //map.readseq("/Users/lpantano/repos/debug/miraligner/SRR950876_trimmed.fq.gz-collapse.txt","DB","hsa",1,3,3,"fasta","test",false,false,17);
             System.exit(0);
         }
         Options jct = new Options();
