@@ -438,24 +438,22 @@ public class map {
     public static alignment align3end (String seq,String db,int mm,alignment alg,int pos){
         String [] seqNT=seq.split("");
         String [] adNT=db.split("");
-        //System.out.println("triming align seq: "+seq+" db "+db +"\n");
         int score=0;
-
         int minlen=seq.length()-3;
+        //System.out.println("triming align seq: "+seq+" db "+db +" mm "+mm+" minlen "+minlen+"\n");
         alg=alignment(seq.substring(0,minlen),db.substring(0,minlen),alg,pos);
         //System.out.println("align sc:"+alg.scmut+" before end seq: "+seq.substring(0,minlen)+" db "+db.substring(0,minlen) +"\n");
-        //alg.scmut+=scb;
-        for (int i=seq.length();i>minlen;i--){
+        for (int i=seq.length()-1;i>minlen-1;i--){
             int sc=substitution(seqNT[i],adNT[i],0,1);
             //System.out.println(i+" triming subs seq: "+seqNT[i]+" db "+adNT[i] +"\n");
             //score+=sc;
             if (sc==0){
                 mm++;
-                score=i;
+                score=i+1;
             }
         }
         //System.out.println("#score: "+score+"\n");
-        if (score>0){
+        if (mm>0){
             alg.add="I-"+seq.substring(score-1,seq.length());
         }
         //System.out.println("#add: "+alg.add+"\n");
@@ -474,14 +472,16 @@ public class map {
         String [] adNT=db.split("");
         int minlen;
         minlen=seq.length();
-
-        for (i=1;i<=minlen;i++){
+        //System.out.println(seq);
+        //System.out.println(db);
+        for (i=0;i<minlen;i++){
             
+            //System.out.println(i+" "+seqNT[i]+" "+adNT[i]);
             int sc=substitution(seqNT[i],adNT[i],pe,re);
             if (sc==0){
                 //System.out.println(i+" "+seqNT[i]+" "+adNT[i]);
                 alg.scmut++;
-                int tpos=i+pos;
+                int tpos=i+pos+1;
                 alg.mut=tpos+seqNT[i]+""+adNT[i];
             }
             score+=sc;
