@@ -12,25 +12,19 @@ public class Main {
 
 
     public static void main(String[] args) throws FileNotFoundException, IOException {
-        // TODO code application logic here
-        
-        //String[] argv = { "-s", "hsa", "-trim", "3" };
-        
-        
         String format = "None";
         String test="notest";
         if (test.equals("test")){
-            map.readseq("test/test.fa","DB","hsa",1,3,3,"fasta","test",false,false,17);
-            //map.readseq("/Users/lpantano/repos/debug/miraligner/SRR950876_trimmed.fq.gz-collapse.txt","DB","hsa",1,3,3,"fasta","test",false,false,17);
+            map.readseq("test/test.fa","DB","hsa",1,3,3,"fasta","test",false,false,16);
             System.exit(0);
         }
         Options jct = new Options();
-        new JCommander(jct, args);
-        if (jct.help | args.length<2 ){
-            System.out.println("\njava -jar miraligner.jar -sub mismatches -trim trimming-nts -add addition-nts -s species -i read_seq_file -db miRBase_folder_files -o output_file");
+        JCommander jc = new JCommander(jct, args);
+        if (jct.help | args.length<4 ){
+            jc.usage();
+            System.out.println("\njava -jar miraligner.jar -minl 16 -sub mismatches -trim trimming-nts -add addition-nts -s species -i read_seq_file -db miRBase_folder_files -o output_file");
             System.out.println("\nexample:java -jar miraligner.jar -sub 1 -trim 3 -add 3 -s hsa -i test/test.fa -db DB -o test/out");
             System.out.println("example: see output at miraligner/test/output.mirna & miraligner/test/output.mirna.opt");
-            System.out.println("See more at: seqbuster.blogspot.com\n");
             System.out.println("\n");
             System.exit(0);
         }
@@ -73,7 +67,7 @@ public class Main {
            sp=false;
         }
         if (jct.minl<16){
-           System.out.println("Only allowed >16 minimum size");
+           System.out.println("Only allowed >=16 minimum size");
            jct.minl=16;
         }
         if (sp  ){

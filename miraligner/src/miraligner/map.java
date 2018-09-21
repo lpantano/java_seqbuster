@@ -225,7 +225,7 @@ public class map {
                                             mapinfo.put(codeseq, prealg);
                                         }
                                     }
-                                    //System.out.print(namechr+" "+pospretemp+" "+alg.sc+" "+alg.mut+" "+alg.add+"\n");
+                                    // System.out.print(namechr+" "+pospretemp+" "+alg.sc+" "+alg.mut+" "+alg.add+"\n");
                                 }
                                 }
                             }
